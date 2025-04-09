@@ -8,6 +8,8 @@ import { moviesRoute } from "./routes.js/movieRoute.js";
 
 dotenv.config();
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
@@ -21,4 +23,5 @@ app.get("/", (req, res) => {
     console.log("Hello world");
 })
 
-app.listen(process.env.PORT, () => console.log("PORT running on", process.env.PORT));
+
+app.listen( PORT, () => console.log("PORT running on",PORT));
