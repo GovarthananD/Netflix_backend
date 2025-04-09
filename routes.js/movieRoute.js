@@ -1,6 +1,6 @@
 import express from "express";
 import { Movies } from "../models/moviesModel.js";
-import { authMiddleware } from "./authorization.js";
+
 
 
 
@@ -21,7 +21,7 @@ router.post("/addMovie", async (req, res) => {
     }
 });
 
-router.get("/allMovies", authMiddleware, (req, res) => {
+router.get("/allMovies",  (req, res) => {
     try{
         Movies.find()
         .then((data) => {
